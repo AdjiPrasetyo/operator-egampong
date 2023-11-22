@@ -30,6 +30,16 @@ class KtpController extends Controller
         //
     }
 
+    public function form(string $id)
+    {
+        $client = new Client();
+        $url = 'http://localhost:8001/api/kk/' . $id;
+        $response = $client->request('GET', $url);
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+        $data = $contentArray['data'];
+        return view('dapenduk.form', ['data' => $data]);
+    }
     /**
      * Store a newly created resource in storage.
      */

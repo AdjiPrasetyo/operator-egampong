@@ -39,12 +39,14 @@ Route::middleware(['auth'])->group(function () {
   Route::get('margoyoso', [AdminController::class, 'index'])->name('margoyoso')->middleware('userAkses:margoyoso');
   Route::get('payungraja', [AdminController::class, 'index'])->name('payungraja')->middleware('userAkses:payungraja');
 
+
   Route::get('kk', [KkController::class, 'index']);
   Route::post('kk', [KkController::class, 'store']);
-  Route::get('kk/{id}', [KkController::class, 'addKeluarga']);
+  Route::get('kk/{id}', [KkController::class, 'show']);
 
   Route::get('ktp', [KtpController::class, 'index']);
   Route::post('ktp', [KtpController::class, 'store']);
+  Route::get('ktp/{id}', [KtpController::class, 'form']);
 
   Route::get('pindah',[PindahController::class, 'index']);
 

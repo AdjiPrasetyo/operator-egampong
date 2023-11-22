@@ -64,22 +64,19 @@ class KkController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $client = new Client();
+
+        $url = 'http://localhost:8001/api/info-detail/'.$id;
+        $response = $client->request('GET', $url);
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+        $data = $contentArray['data'];
+        return view('dapenduk.detail_keluarga', ['data' => $data, 'id' => $id]);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function addKeluarga(string $id)
-    {
-        $client = new Client();
-        $url = 'http://localhost:8001/api/kk/' . $id;
-        $response = $client->request('GET', $url);
-        $content = $response->getBody()->getContents();
-        $contentArray = json_decode($content, true);
-        $data = $contentArray['data'];
-        return view('dapenduk.form', ['data' => $data]);
-    }
 
     /**
      * Update the specified resource in storage.

@@ -19,9 +19,9 @@
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
       <i class="bi bi-exclamation-octagon me-1"></i>
-        @foreach ($errors->all() as $item)
-              {{$item}}
-        @endforeach
+      @foreach ($errors->all() as $item)
+      {{$item}}
+      @endforeach
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
@@ -33,10 +33,10 @@
       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
-    
+
     <div class="row" style="margin: 3% 20% 0% 20%">
 
-      <div class="card text-center" style="width: 50rem" >
+      <div class="card text-center" style="width: 50rem">
         <div class="card-body">
           <h5 class="card-title">Tambah Data Kartu Keluarga</h5>
 
@@ -45,7 +45,8 @@
             @csrf
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" value="{{old('id')}}" class="form-control" name="id" id="floatingName" placeholder="Nomor Kartu Keluarga" maxlength="16" minlength="16">
+                <input type="text" value="{{old('id')}}" class="form-control" name="id" id="floatingName"
+                  placeholder="Nomor Kartu Keluarga" maxlength="16" minlength="16">
                 <label for="floatingName">Nomor Kartu Keluarga</label>
               </div>
             </div>
@@ -96,27 +97,23 @@
             <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
             <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
             <td>
-    
-            <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary"
-              data-bs-toggle="tooltip" data-bs-placement="left"
-              data-bs-custom-class="custom-tooltip"
-              data-bs-title="Data Keluarga"><i class="bi bi-people-fill"></i></a>
 
-              <a class="btn btn-success add-data"
-              data-bs-toggle="modal" 
-              data-bs-target="#modal-add"
-              data-id="{{$item['id']}}"
-              href="#">
-              <i class="bi bi-person-fill-add"></i>
-            </a>
-            @include('layout.modal.add')
+              <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
+                data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Data Keluarga"><i
+                  class="bi bi-people-fill"></i></a>
+
+              <a href="{{url('ktp/'.$item['id'])}}" class="btn btn-success" data-bs-toggle="tooltip"
+                data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Tambah Keluarga">
+                <i class=" bi bi-person-fill-add"></i>
+              </a>
+
             </td>
-            
+
           </tr>
-          
+
           @endforeach
-       
-          
+
+
         </tbody>
       </table>
       <!-- End Table with stripped rows -->
@@ -126,5 +123,4 @@
 
 </main><!-- End #main -->
 
-@include('layout.modal.js')
 @endsection
