@@ -1,4 +1,3 @@
-
 <!-- Jumlah Jiwa Card -->
 <div class="col-xxl-3 col-xl-12">
 
@@ -36,8 +35,8 @@
 
 </div><!-- End Jumlah Jiwa Card -->
 
- <!-- Jumlah KK Card -->
- <div class="col-xxl-3 col-xl-12">
+<!-- Jumlah KK Card -->
+<div class="col-xxl-3 col-xl-12">
 
   <div class="card info-card sales-card">
 
@@ -84,8 +83,8 @@
 
 </div><!-- End Jumlah laki-laki Card -->
 
- <!-- Jumlah perempuan Card -->
- <div class="col-xxl-3 col-xl-12">
+<!-- Jumlah perempuan Card -->
+<div class="col-xxl-3 col-xl-12">
 
   <div class="card info-card sales-card">
 

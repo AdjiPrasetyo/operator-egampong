@@ -6,6 +6,7 @@ use App\Http\Controllers\KkController;
 use App\Http\Controllers\KtpController;
 use App\Http\Controllers\MeninggalController;
 use App\Http\Controllers\PindahController;
+use App\Http\Controllers\ValidasiController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -49,8 +50,12 @@ Route::middleware(['auth'])->group(function () {
   Route::get('ktp/{id}', [KtpController::class, 'form']);
 
   Route::get('pindah',[PindahController::class, 'index']);
+  Route::post('pindah/{id}',[PindahController::class, 'create']);
 
   Route::get('meninggal',[MeninggalController::class, 'index']);
+  Route::post('meninggal/{id}',[MeninggalController::class, 'create']);
+
+  Route::get('validasi',[ValidasiController::class, 'index']);
 
 
 

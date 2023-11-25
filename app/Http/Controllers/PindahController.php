@@ -25,9 +25,26 @@ class PindahController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(string $id)
     {
-        //
+        $client = new Client();
+
+        $parameter = [
+            'ktp_id' => $id,
+        ];
+        $url = 'http://localhost:8001/api/pindah';
+        $response = $client->request('POST', $url, [
+            'headers' => ['Content-type' => 'application/json'],
+            'body' => json_encode($parameter)
+        ]);
+        $content = $response->getBody()->getContents();
+        $contentArray = json_decode($content, true);
+        if ($contentArray['status'] != true) {
+            $error = $contentArray['data'];
+            return redirect()->to('validasi')->withErrors($error)->withInput();
+        } else {
+            return redirect()->to('validasi')->with('success', 'Berhasil Memindahkan Data Penduduk.');
+        }
     }
 
     /**

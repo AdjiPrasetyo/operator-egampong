@@ -126,8 +126,8 @@
             </a>
           </li>
 
-          <a href="#">
-            <i class="bi bi-card-checklist" style="font-size: 20px"></i><span>validasi</span>
+          <a href="{{url('validasi')}}">
+            <i class="bi bi-card-checklist" style="font-size: 20px"></i><span>Validasi</span>
           </a>
       </li>
     </ul>

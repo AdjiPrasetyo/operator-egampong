@@ -1,4 +1,3 @@
-
 @extends('layout.main')
 
 @section('container')
@@ -28,7 +27,7 @@
         </ol>
       </nav>
       @include('layout.info.sukadamai')
-      
+
       @include('layout.info.kebunbaru')
       @include('layout.info.rejosari')
       @include('layout.info.margoyoso')
@@ -39,6 +38,5 @@
 
 </main><!-- End #main -->
 
-    
+
 @endsection
-  

@@ -47,18 +47,12 @@
                 <td>{{$item['pendidikan']}}</td>
                 <td>{{$item['pekerjaan']}}</td>
                 <td>{{$item['status_keluarga']}}</td>
-
               </tr>
 
               @endforeach
-
-
             </tbody>
           </table>
           <!-- End Table with stripped rows -->
-
-
-
         </div>
       </div>
 

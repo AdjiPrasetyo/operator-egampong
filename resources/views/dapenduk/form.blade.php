@@ -21,7 +21,7 @@
           <h5 class="card-title">Data Keluarga</h5>
 
           <!-- Floating Labels Form -->
-          <form class="row g-3" method="POST" action="ktp">
+          <form class="row g-3" method="POST" action="{{url('ktp')}}">
             <div class="col-md-6">
               @csrf
               <div class="form-floating">

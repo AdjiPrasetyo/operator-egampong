@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 
-class MeninggalController extends Controller
+class ValidasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,37 +14,20 @@ class MeninggalController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://localhost:8001/api/meninggal';
+        $url = 'http://localhost:8001/api/validasi';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);
         $data = $contentArray['data'];
-        return view('keterangan.meninggal', ['data' => $data]);
+        return view('dapenduk.validasi', ['data' => $data]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create(string $id)
+    public function create()
     {
-        $client = new Client();
-
-        $parameter = [
-            'ktp_id' => $id,
-        ];
-        $url = 'http://localhost:8001/api/meninggal';
-        $response = $client->request('POST', $url, [
-            'headers' => ['Content-type' => 'application/json'],
-            'body' => json_encode($parameter)
-        ]);
-        $content = $response->getBody()->getContents();
-        $contentArray = json_decode($content, true);
-        if ($contentArray['status'] != true) {
-            $error = $contentArray['data'];
-            return redirect()->to('validasi')->withErrors($error)->withInput();
-        } else {
-            return redirect()->to('validasi')->with('success', 'Berhasil Menambahkan Data Penduduk Meninggal.');
-        }
+        //
     }
 
     /**
