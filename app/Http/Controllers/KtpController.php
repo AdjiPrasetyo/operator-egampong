@@ -14,7 +14,7 @@ class KtpController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://localhost:8001/api/ktp';
+        $url = 'http://egampong.com/api/ktp';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);
@@ -33,7 +33,7 @@ class KtpController extends Controller
     public function form(string $id)
     {
         $client = new Client();
-        $url = 'http://localhost:8001/api/kk/' . $id;
+        $url = 'http://egampong.com/api/kk/' . $id;
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);
@@ -76,7 +76,7 @@ class KtpController extends Controller
             'nama_ayah' => $nama_ayah,
             'nama_ibu' => $nama_ibu,
         ];
-        $url = 'http://localhost:8001/api/ktp';
+        $url = 'http://egampong.com/api/ktp';
         $response = $client->request('POST', $url, [
             'headers' => ['Content-type' => 'application/json'],
             'body' => json_encode($parameter)
