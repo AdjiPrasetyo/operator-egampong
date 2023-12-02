@@ -14,7 +14,7 @@ class ValidasiController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://egampong.com/api/validasi';
+        $url = 'http://babussalam.egampong.com/api/validasi';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);

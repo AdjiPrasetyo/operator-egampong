@@ -14,7 +14,7 @@ class KkController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://egampong.com/api/kk';
+        $url = 'http://babussalam.egampong.com/api/kk';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);
@@ -44,7 +44,7 @@ class KkController extends Controller
             'id' => $id,
             'alamat' => $alamat,
         ];
-        $url = 'http://egampong.com/api/kk';
+        $url = 'http://babussalam.egampong.com/api/kk';
         $response = $client->request('POST', $url, [
             'headers' => ['Content-type' => 'application/json'],
             'body' => json_encode($parameter)
@@ -66,7 +66,7 @@ class KkController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://egampong.com/api/info-detail/'.$id;
+        $url = 'http://babussalam.egampong.com/api/info-detail/'.$id;
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);

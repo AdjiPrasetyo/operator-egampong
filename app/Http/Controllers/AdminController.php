@@ -11,7 +11,7 @@ class AdminController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://egampong.com/api/info';
+        $url = 'http://babussalam.egampong.com/api/info';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);

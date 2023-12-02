@@ -14,7 +14,7 @@ class MeninggalController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://egampong.com/api/meninggal';
+        $url = 'http://babussalam.egampong.com/api/meninggal';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);
@@ -32,7 +32,7 @@ class MeninggalController extends Controller
         $parameter = [
             'ktp_id' => $id,
         ];
-        $url = 'http://egampong.com/api/meninggal';
+        $url = 'http://babussalam.egampong.com/api/meninggal';
         $response = $client->request('POST', $url, [
             'headers' => ['Content-type' => 'application/json'],
             'body' => json_encode($parameter)

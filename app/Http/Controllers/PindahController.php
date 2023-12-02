@@ -14,7 +14,7 @@ class PindahController extends Controller
     {
         $client = new Client();
 
-        $url = 'http://egampong.com/api/pindah';
+        $url = 'http://babussalam.egampong.com/api/pindah';
         $response = $client->request('GET', $url);
         $content = $response->getBody()->getContents();
         $contentArray = json_decode($content, true);
@@ -32,7 +32,7 @@ class PindahController extends Controller
         $parameter = [
             'ktp_id' => $id,
         ];
-        $url = 'http://egampong.com/api/pindah';
+        $url = 'http://babussalam.egampong.com/api/pindah';
         $response = $client->request('POST', $url, [
             'headers' => ['Content-type' => 'application/json'],
             'body' => json_encode($parameter)
