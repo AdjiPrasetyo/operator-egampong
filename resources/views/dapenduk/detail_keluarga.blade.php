@@ -19,7 +19,7 @@
       <div class="card">
         <div class="card-body text-center">
           <h5 class="card-title">KARTU KELUARGA</h5>
-          <h5 class="text-center">{{$id}}</h5>
+          <h3 class="text-center">{{$id}}</h3>
           <!-- Table with stripped rows -->
           <table class="table datatable">
             <thead>
@@ -42,7 +42,7 @@
                 <td>{{$item['id']}}</td>
                 <td>{{$item['jenis_kelamin']}}</td>
                 <td>{{$item['tempat_lahir']}}</td>
-                <td>{{\Carbon\Carbon::parse($item['tanggal_lahir'])->format('d-m-y')}}</td>
+                <td>{{\Carbon\Carbon::parse($item['tanggal_lahir'])->format('d-m-Y')}}</td>
                 <td>{{$item['agama']}}</td>
                 <td>{{$item['pendidikan']}}</td>
                 <td>{{$item['pekerjaan']}}</td>
