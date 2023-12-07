@@ -21,7 +21,7 @@
 
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Validasi Data Penduduk</h5>
+        <h5 class="card-title text-center">Validasi Data Penduduk</h5>
         <!-- Table with stripped rows -->
         <table class="table datatable">
           <thead>
@@ -30,6 +30,7 @@
               <th scope="col">NIK</th>
               <th scope="col">Nama Lengkap</th>
               <th scope="col">Jenis Kelamin</th>
+              <th scope="col">Alamat</th>
               <th scope="col">Action</th>
             </tr>
           </thead>
@@ -40,6 +41,7 @@
               <td>{{$item['id']}}</td>
               <td>{{$item['nama_lengkap']}}</td>
               <td>{{$item['jenis_kelamin']}}</td>
+              <td>{{$item['alamat']}}</td>
               <td>
                 <form action="{{url('pindah/'.$item['id'])}}" method="POST"
                   onsubmit="return confirm('Apakah Benar Penduduk Telah Pindah ?')" class="d-inline">

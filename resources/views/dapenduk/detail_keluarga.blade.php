@@ -19,26 +19,42 @@
       <div class="card">
         <div class="card-body text-center">
           <h5 class="card-title">KARTU KELUARGA</h5>
-          <h3 class="text-center">{{$id}}</h3>
+
+
+          <div class="container text-center">
+            <div class="row">
+              <div class="col-md-12">
+                <h3>{{$id}}</h3>
+              </div>
+              <div class="col-md-1 ms-auto"><a href="{{url('ktp/'.$id)}}" class="btn btn-success"
+                  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-custom-class="custom-tooltip"
+                  data-bs-title="Tambah Keluarga">
+                  <i class=" bi bi-person-fill-add"></i>
+                </a></div>
+            </div>
+          </div>
+
+
           <!-- Table with stripped rows -->
           <table class="table datatable">
             <thead>
               <tr>
-                <th scope="col">Nama Lengkap</th>
-                <th scope="col">NIK</th>
-                <th scope="col">Jenis Kelamin</th>
-                <th scope="col">Tempat Lahir</th>
-                <th scope="col">Tanggal Lahir</th>
-                <th scope="col">Agama</th>
-                <th scope="col">Pendidikan</th>
-                <th scope="col">Jenis Pekerjaan</th>
-                <th scope="col">Status</th>
+
+                <th>Nama Lengkap</th>
+                <th>NIK</th>
+                <th>Jenis Kelamin</th>
+                <th>Tempat Lahir</th>
+                <th>Tanggal Lahir</th>
+                <th>Agama</th>
+                <th>Pendidikan</th>
+                <th>Jenis Pekerjaan</th>
+                {{-- <th scope="col">Status</th> --}}
               </tr>
             </thead>
             <tbody>
               @foreach ($data as $item)
               <tr>
-                <th scope="row">{{$item['nama_lengkap']}}</th>
+                <td>{{$item['nama_lengkap']}}</td>
                 <td>{{$item['id']}}</td>
                 <td>{{$item['jenis_kelamin']}}</td>
                 <td>{{$item['tempat_lahir']}}</td>
@@ -46,9 +62,8 @@
                 <td>{{$item['agama']}}</td>
                 <td>{{$item['pendidikan']}}</td>
                 <td>{{$item['pekerjaan']}}</td>
-                <td>{{$item['status_keluarga']}}</td>
+                {{-- <td scope="row">{{$item['status_keluarga']}}</td> --}}
               </tr>
-
               @endforeach
             </tbody>
           </table>

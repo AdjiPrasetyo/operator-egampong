@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\KkController;
 use App\Http\Controllers\KtpController;
@@ -33,12 +33,12 @@ Route::get('/home', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-  Route::get('admin', [AdminController::class, 'index'])->name('admin');
-  Route::get('sukadamai', [AdminController::class, 'index'])->name('sukadamai')->middleware('userAkses:sukadamai');
-  Route::get('kebunbaru', [AdminController::class, 'index'])->name('kebunbaru')->middleware('userAkses:kebunbaru');
-  Route::get('rejosari', [AdminController::class, 'index'])->name('rejosari')->middleware('userAkses:rejosari');
-  Route::get('margoyoso', [AdminController::class, 'index'])->name('margoyoso')->middleware('userAkses:margoyoso');
-  Route::get('payungraja', [AdminController::class, 'index'])->name('payungraja')->middleware('userAkses:payungraja');
+  Route::get('admin', [UserController::class, 'index'])->name('admin');
+  Route::get('sukadamai', [UserController::class, 'index'])->name('sukadamai')->middleware('userAkses:sukadamai');
+  Route::get('kebunbaru', [UserController::class, 'index'])->name('kebunbaru')->middleware('userAkses:kebunbaru');
+  Route::get('rejosari', [UserController::class, 'index'])->name('rejosari')->middleware('userAkses:rejosari');
+  Route::get('margoyoso', [UserController::class, 'index'])->name('margoyoso')->middleware('userAkses:margoyoso');
+  Route::get('payungraja', [UserController::class, 'index'])->name('payungraja')->middleware('userAkses:payungraja');
 
 
   Route::get('kk', [KkController::class, 'index']);

@@ -56,30 +56,53 @@
             <img src="{{asset('assets/img/profile.jpeg')}}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">
               @if (Auth::user()->role == 'admin')
-              Admin
+              {{ auth()->user()->name }}
               @endif
               @if (Auth::user()->role == 'sukadamai')
-              Suka Damai
+              {{ auth()->user()->name }}
               @endif
               @if (Auth::user()->role == 'kebunbaru')
-              Kebun Baru
+              {{ auth()->user()->name }}
               @endif
               @if (Auth::user()->role == 'rejosari')
-              Rejo Sari
+              {{ auth()->user()->name }}
               @endif
               @if (Auth::user()->role == 'margoyoso')
-              Margo yoso
+              {{ auth()->user()->name }}
               @endif
               @if (Auth::user()->role == 'payungraja')
-              Payung Raja
+              {{ auth()->user()->name }}
               @endif
             </span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Operator</h6>
-              <span>eGampong</span>
+              @if (Auth::user()->role == 'admin')
+              <h6>Admin eGampong</h6>
+              <span>Babussalam</span>
+              @endif
+              @if (Auth::user()->role == 'sukadamai')
+              <h6>Admin eGampong</h6>
+              <span>Suka Damai</span>
+              @endif
+              @if (Auth::user()->role == 'kebunbaru')
+              <h6>Admin eGampong</h6>
+              <span>Kebun Baru</span>
+              @endif
+              @if (Auth::user()->role == 'rejosari')
+              <h6>Admin eGampong</h6>
+              <span>Rejo Sari</span>
+              @endif
+              @if (Auth::user()->role == 'margoyoso')
+              <h6>Admin eGampong</h6>
+              <span>Margo Yoso</span>
+              @endif
+              @if (Auth::user()->role == 'payungraja')
+              <h6>Admin eGampong</h6>
+              <span>Payung Raja</span>
+              @endif
+
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -125,31 +148,34 @@
               <i class="bi bi-person-vcard" style="font-size: 20px"></i><span>Kartu Tanda Penduduk</span>
             </a>
           </li>
-
-          <a href="{{url('validasi')}}">
-            <i class="bi bi-card-checklist" style="font-size: 20px"></i><span>Validasi</span>
-          </a>
+          @if (Auth::user()->role == 'admin')
+          <li>
+            <a href="{{url('validasi')}}">
+              <i class="bi bi-card-checklist" style="font-size: 20px"></i><span>Validasi</span>
+            </a>
+          </li>
+          @endif
+        </ul>
       </li>
-    </ul>
-    </li><!-- End Components Nav -->
+      <!-- End Components Nav -->
 
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-        <i class="bi bi-journal-text"></i><span>Keterangan</span><i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-        <li>
-          <a href="{{url('pindah')}}">
-            <i class="bi bi-person-lines-fill" style="font-size: 20px"></i><span>Pindah</span>
-          </a>
-        </li>
-        <li>
-          <a href="{{url('meninggal')}}">
-            <i class="bi bi-person-fill-x" style="font-size: 20px"></i><span>Meninggal</span>
-          </a>
-        </li>
-      </ul>
-    </li><!-- End Forms Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-journal-text"></i><span>Keterangan</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{url('pindah')}}">
+              <i class="bi bi-person-lines-fill" style="font-size: 20px"></i><span>Pindah</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{url('meninggal')}}">
+              <i class="bi bi-person-fill-x" style="font-size: 20px"></i><span>Meninggal</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Forms Nav -->
     </ul>
   </aside><!-- End Sidebar-->
 

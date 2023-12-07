@@ -16,24 +16,7 @@
 
 
   <section class="section dashboard">
-    @if ($errors->any())
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <i class="bi bi-exclamation-octagon me-1"></i>
-      @foreach ($errors->all() as $item)
-      {{$item}}
-      @endforeach
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    @endif
-
-    @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <i class="bi bi-exclamation-octagon me-1"></i>
-      {{session('success')}}
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    @endif
-
+    @include('layout.message')
   </section>
 
 
@@ -44,28 +27,20 @@
       <table class="table datatable">
         <thead>
           <tr>
-            <th scope="col">No Agenda</th>
             <th scope="col">NIK</th>
-            <th scope="col">Created</th>
+            <th scope="col">No KK</th>
+            <th scope="col">Nama Lengkap</th>
+            <th scope="col">Alamat</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($data as $item)
           <tr>
-            <th scope="row">{{$item['id']}}</th>
-            <td>{{$item['ktp_id']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            {{-- <td>
-              <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
-                data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Data Keluarga"><i
-                  class="bi bi-people-fill"></i></a>
-
-              <a href="{{url('kk/'.$item['id'])}}" class="btn btn-success" data-bs-toggle="tooltip"
-                data-bs-placement="left" data-bs-custom-class="custom-tooltip" data-bs-title="Tambah Keluarga"><i
-                  class="bi bi-person-fill-add"></i></a>
-
-            </td> --}}
+            <td scope="row">{{$item['id']}}</td>
+            <td>{{$item['kk_id']}}</td>
+            <td>{{$item['nama_lengkap']}}</td>
+            <td>{{$item['alamat']}}</td>
           </tr>
           @endforeach
 
