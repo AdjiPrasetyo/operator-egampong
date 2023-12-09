@@ -25,7 +25,7 @@
             <div class="col-md-6">
               @csrf
               <div class="form-floating">
-                <input type="text" value="{{$data['id']}}" name="kk_id" class="form-control" maxlength="16"
+                <input type="text" value="{{$data['kid']}}" name="kk_id" class="form-control" maxlength="16"
                   id="floatingName" placeholder="NO KK" readonly>
                 <label for="floatingName">No KK</label>
               </div>

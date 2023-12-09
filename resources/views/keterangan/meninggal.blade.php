@@ -21,7 +21,7 @@
 
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Data Penduduk Meninggal</h5>
+      <h5 class="card-title text-center">Data Meninggal Dunia</h5>
       <!-- Table with stripped rows -->
       <table class="table datatable">
         <thead>
