@@ -206,8 +206,8 @@
           <tr>
             <th scope="row">{{$item['id']}}</th>
             <td>{{$item['alamat']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('d-m-Y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('d-m-Y')}}</td>
             <td>
 
               <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
@@ -230,8 +230,8 @@
           <tr>
             <th scope="row">{{$item['id']}}</th>
             <td>{{$item['alamat']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('d-m-Y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('d-m-Y')}}</td>
             <td>
 
               <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
@@ -255,8 +255,8 @@
           <tr>
             <th scope="row">{{$item['id']}}</th>
             <td>{{$item['alamat']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('d-m-Y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('d-m-Y')}}</td>
             <td>
 
               <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
@@ -280,8 +280,8 @@
           <tr>
             <th scope="row">{{$item['id']}}</th>
             <td>{{$item['alamat']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('d-m-Y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('d-m-Y')}}</td>
             <td>
 
               <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
@@ -305,8 +305,8 @@
           <tr>
             <th scope="row">{{$item['id']}}</th>
             <td>{{$item['alamat']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('d-m-Y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('d-m-Y')}}</td>
             <td>
 
               <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"
@@ -330,8 +330,8 @@
           <tr>
             <th scope="row">{{$item['id']}}</th>
             <td>{{$item['alamat']}}</td>
-            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('l\, d-m-y')}}</td>
-            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('l\, d-m-y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['created_at'])->format('d-m-Y')}}</td>
+            <td>{{\Carbon\Carbon::parse($item['updated_at'])->format('d-m-Y')}}</td>
             <td>
 
               <a href="{{url('kk/'.$item['id'])}}" class="btn btn-primary" data-bs-toggle="tooltip"

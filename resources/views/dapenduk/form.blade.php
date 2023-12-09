@@ -120,6 +120,7 @@
                   <option value="ANAK">ANAK</option>
                   <option value="MENANTU">MENANTU</option>
                   <option value="MERTUA">MERTUA</option>
+                  <option value="FAMILI LAIN">FAMILI LAIN</option>
                 </select>
                 <label for="floatingSelect">Status Keluarga</label>
               </div>
